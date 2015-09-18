@@ -1,0 +1,22 @@
+<template name="notifications_menu">
+  <li class="dropdown notifications-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-warning"></i>
+      <span class="label label-warning">{{ notifications.count }}</span>
+    </a>
+    <ul class="dropdown-menu">
+      <li class="header">You have {{ notifications.count }} notifications</li>
+      <li>
+        <!-- inner menu: contains the actual data -->
+        <ul class="menu">
+          {{#each notifications}}
+            <li>
+              {{> notification notification_level=notification_level notification_message=notification_message }}
+            </li>
+          {{/each}}
+        </ul>
+      </li>
+      <li class="footer"><a href="#">View all</a></li>
+    </ul>
+  </li>
+</template>

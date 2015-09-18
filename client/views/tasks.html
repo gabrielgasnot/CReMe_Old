@@ -1,0 +1,24 @@
+<template name="tasks_menu">
+  <li class="dropdown tasks-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-tasks"></i>
+      <span class="label label-danger">{{ tasks.count }}</span>
+    </a>
+    <ul class="dropdown-menu">
+      <li class="header">You have {{ tasks.count }} tasks</li>
+      <li>
+        <!-- inner menu: contains the actual data -->
+        <ul class="menu">
+          {{#each tasks}}
+          <li>
+            {{> task task_name=task_name task_percentage_completion=task_percentage_completion}}
+          </li>
+          {{/each}}
+        </ul>
+      </li>
+      <li class="footer">
+        <a href="#">View all tasks</a>
+      </li>
+    </ul>
+  </li>
+</template>

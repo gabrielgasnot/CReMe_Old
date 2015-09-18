@@ -1,0 +1,10 @@
+<template name="user_sidebar">
+  <div class="pull-left image">
+    <img alt="User Image" class="img-circle" src="{{ currentUser.profile.avatar }}"/>
+  </div>
+  <div class="pull-left info">
+    <p>Bonjour,
+      {{ currentUser.profile.firstname }}</p>
+    <a href="{{ pathFor 'profile' }}"><i class="fa fa-pencil-square-o"></i>Profile</a>
+  </div>
+</template>

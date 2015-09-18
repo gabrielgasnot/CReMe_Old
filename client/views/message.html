@@ -1,0 +1,12 @@
+<template name="message">
+  <a href="#">
+    <div class="pull-left">
+      <img src="{{ avatar }}" class="img-circle" alt="User Image"/>
+    </div>
+    <h4>
+    {{ mail_sender }}
+    <small><i class="fa fa-clock-o"></i> {{ dateAgeFromNow mail_age }}</small>
+    </h4>
+    <p>{{ mail_subject }}</p>
+  </a>
+</template>

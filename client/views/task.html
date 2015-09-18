@@ -1,0 +1,13 @@
+<template name="task">
+  <a href="#">
+    <h3>
+      {{ task_name }}
+      <small class="pull-right">{{ task_percentage_completion }}%</small>
+    </h3>
+    <div class="progress xs">
+      <div class="progress-bar progress-bar-aqua" style="width: {{ task_percentage_completion }}%" role="progressbar" aria-valuenow="{{ task_percentage_completion }}" aria-valuemin="0" aria-valuemax="100">
+        <span class="sr-only">{{ task_percentage_completion }}% Complete</span>
+      </div>
+    </div>
+  </a>
+</template>

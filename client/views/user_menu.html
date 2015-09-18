@@ -1,0 +1,39 @@
+<template name="user_menu">
+  <li class="dropdown user user-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>{{ currentUser.profile.firstname }} {{ currentUser.profile.name }} <i class="caret"></i></span>
+    </a>
+    <ul class="dropdown-menu">
+      <!-- User image -->
+      <li class="user-header bg-light-blue">
+        <img src="{{ currentUser.profile.avatar }}" class="img-circle" alt="User Image" />
+        <p>
+          {{ currentUser.profile.firstname }} {{ currentUser.profile.name }} - {{ currentUser.profile.job }}
+          <small>Member since {{ currentUser.createdAt }}</small>
+        </p>
+      </li>
+      <!-- Menu Body -->
+      <li class="user-body">
+        <div class="col-xs-4 text-center">
+          <a href="#">Followers</a>
+        </div>
+        <div class="col-xs-4 text-center">
+          <a href="#">Sales</a>
+        </div>
+        <div class="col-xs-4 text-center">
+          <a href="#">Friends</a>
+        </div>
+      </li>
+      <!-- Menu Footer-->
+      <li class="user-footer">
+        <div class="pull-left">
+          <a href="{{ pathFor 'profile' }}" class="btn btn-default btn-flat">Profile</a>
+        </div>
+        <div class="pull-right">
+          <a href="#" class="btn btn-default btn-flat" id="signout">Sign out</a>
+        </div>
+      </li>
+    </ul>
+  </li>
+</template>

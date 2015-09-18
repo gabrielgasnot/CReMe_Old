@@ -1,0 +1,12 @@
+meteor add linto:jquery-ui
+meteor add mrt:bootstrap-
+meteor add momentjs:moment
+meteor add clubfest:raphael
+meteor add chhib:morris
+meteor add benmgreene:jquery-sparklines
+meteor add jackyqiu:meteor-jvectormap
+meteor add rzymek:fullcalendar
+meteor add jameslefrere:autoform-jquery-knob
+meteor add loftsteinn:bootstrap3-daterangepicker
+meteor add mrt:bootstrap3-wysihtml5
+meteor add tkornblit:icheck

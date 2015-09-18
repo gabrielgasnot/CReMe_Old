@@ -1,0 +1,43 @@
+<template name="register_menu">
+  <li class="dropdown user user-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>Anonyme <i class="caret"></i></span>
+    </a>
+    <ul class="dropdown-menu">
+      <!-- User image -->
+      <li class="user-header bg-light-blue">
+        <img src="img/avatar0.png" class="img-circle" alt="User Image" />
+      </li>
+      <li class="user-body">
+        <form id="register_menu_login_form" action="login">
+          <!-- Menu Body -->
+          <div class="form-group">
+            <label for="user_email">Adresse mail</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+              <input type="text" class="form-control" placeholder="your@domain.ext" name="user_email" id="user_email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="user_password">Mot de passe</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              <input type="password" class="form-control" placeholder="password" name="user_password" id="user_password">
+            </div>
+          </div>
+        </form>
+      </li>
+      <!-- Menu Footer-->
+      <li class="user-footer">
+        <div class="pull-left">
+          <a href="#" class="btn btn-default btn-flat" id="signin">Se connecter</a>
+        </div>
+        <div class="pull-right">
+          <a href="#" class="btn btn-default btn-flat" id="register">S'inscrire</a>
+        </div>
+      </li>
+    </ul>
+  </li>
+
+</template>
