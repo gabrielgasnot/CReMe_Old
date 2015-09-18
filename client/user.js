@@ -20,16 +20,18 @@ Template.profile.events({
     $(event.target.parentNode).addClass('selected-thumbnail');
   },
   'click #submit': function(event) {
+    var avatar = $('.selected-thumbnail').children('img').attr('src');
     Meteor.users.update({_id:Meteor.user()._id}, {
       $set:{
         'profile.name': inputName.value,
         'profile.firstname': inputFirstname.value,
-        'profile.job': inputJob.value
+        'profile.job': inputJob.value,
+        'profile.avatar': avatar
       }
     },
   function(err) {
     if(err) {
-      FlashMessages.sendError(err.Message);
+      FlashMessages.sendError(err.message);
     }
     else {
       FlashMessages.sendSuccess('Profil mis à jour.', { autoHide: true, hideDelay: 3000 });

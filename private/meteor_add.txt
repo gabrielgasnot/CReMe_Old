@@ -1,5 +1,5 @@
 meteor add linto:jquery-ui
-meteor add mrt:bootstrap-
+meteor add mrt:bootstrap-3
 meteor add momentjs:moment
 meteor add clubfest:raphael
 meteor add chhib:morris
@@ -10,3 +10,8 @@ meteor add jameslefrere:autoform-jquery-knob
 meteor add loftsteinn:bootstrap3-daterangepicker
 meteor add mrt:bootstrap3-wysihtml5
 meteor add tkornblit:icheck
+meteor add underscore
+meteor add accounts-base
+meteor add accounts-password
+meteor add iron:router
+meteor add mrt:flash-messages
