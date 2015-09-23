@@ -5,6 +5,10 @@ Meteor.startup(function() {
   Meteor.users.remove({});
   Ressources.remove({});
 
+  var date = new Date();
+  var yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+
   // Main user
   var user = {
     username: "admin@creme.com",
@@ -14,7 +18,8 @@ Meteor.startup(function() {
       name: "GASNOT",
       firstname: "Gabriel",
       job: "Web Developer",
-      avatar: "img/avatar5.png"
+      avatar: "img/avatar5.png",
+      created_at: yesterday
     }
   };
 
@@ -70,16 +75,20 @@ Meteor.startup(function() {
     notification_message: "5 new members joined today"
   }, {
     notification_level: "danger",
-    notification_message: "Very long description here that may not fit into the page and may cause design problems"
+    notification_message: "Very long description here that may not fit into the page and may cause design problems",
+    notification_to_user_id: user._id
   }, {
     notification_level: "warning",
-    notification_message: "5 new members joined"
+    notification_message: "5 new members joined",
+    notification_to_user_id: user._id
   }, {
     notification_level: "cart_success",
-    notification_message: "25 sales made"
+    notification_message: "25 sales made",
+    notification_to_user_id: user._id
   }, {
     notification_level: "person_danger",
-    notification_message: "You changed your username"
+    notification_message: "You changed your username",
+    notification_to_user_id: user._id
   }, ];
 
   _.each(notifications, function(notification) {
@@ -90,22 +99,27 @@ Meteor.startup(function() {
   var tasks = [{
     task_name: "Add the tasks",
     task_percentage_completion: 100,
-
+    task_to_user_id: user._id
   }, {
     task_name: "Design some buttons",
-    task_percentage_completion: 20
+    task_percentage_completion: 20,
+    task_to_user_id: user._id
   }, {
     task_name: "Create a nice theme",
-    task_percentage_completion: 40
+    task_percentage_completion: 40,
+    task_to_user_id: user._id
   }, {
     task_name: "Some task I need to do",
-    task_percentage_completion: 60
+    task_percentage_completion: 60,
+    task_to_user_id: user._id
   }, {
     task_name: "Make beautiful transitions",
-    task_percentage_completion: 75
+    task_percentage_completion: 75,
+    task_to_user_id: user._id
   }, {
     task_name: "Adapt theme to Meteor",
-    task_percentage_completion: 10
+    task_percentage_completion: 10,
+    task_to_user_id: user._id
   }, ];
 
   _.each(tasks, function(task) {

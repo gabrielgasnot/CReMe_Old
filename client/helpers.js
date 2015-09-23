@@ -2,6 +2,10 @@ Template.registerHelper("dateAgeFromNow", function(date_to_evaluate) {
   return moment(date_to_evaluate).fromNow();
 });
 
+Template.registerHelper("dateMomentFormat", function(date_to_format){
+  return moment(this.date_to_format).format("DD/MM/YYYY");
+});
+
 Template.registerHelper("classFromNotificationLevel", function(level) {
   var cssClass = "";
   switch (level) {

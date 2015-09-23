@@ -21,21 +21,19 @@ Template.profile.events({
   },
   'click #submit': function(event) {
     var avatar = $('.selected-thumbnail').children('img').attr('src');
-    Meteor.users.update({_id:Meteor.user()._id}, {
-      $set:{
-        'profile.name': inputName.value,
-        'profile.firstname': inputFirstname.value,
-        'profile.job': inputJob.value,
-        'profile.avatar': avatar
+    Meteor.call("updateProfile", {
+      'name': inputName.value,
+      'firstname': inputFirstname.value,
+      'job': inputJob.value,
+      'avatar': avatar
+    }, function(error, result){
+      if(error){
+        FlashMessages.sendError(err.message);
+        console.log("error", error);
       }
-    },
-  function(err) {
-    if(err) {
-      FlashMessages.sendError(err.message);
-    }
-    else {
-      FlashMessages.sendSuccess('Profil mis à jour.', { autoHide: true, hideDelay: 3000 });
-    }
-  });
+      if(result){
+         FlashMessages.sendSuccess('Profil mis à jour.', { autoHide: true, hideDelay: 3000 });
+      }
+    });
   }
 });

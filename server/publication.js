@@ -5,11 +5,19 @@ Meteor.publish("Messages", function() {
 });
 
 Meteor.publish("Notifications", function() {
-  return Notifications.find({});
+  return Notifications.find({
+    $or: [
+      {notification_to_user_id: this.userId},
+      {notification_to_user_id: {$exists: false}},
+      {notification_to_user_id: null}
+    ]
+  });
 });
 
 Meteor.publish("Tasks", function() {
-  return Tasks.find({});
+  return Tasks.find({
+    task_to_user_id: this.userId
+  });
 });
 
 // Meteor.publish("Ressources", function() {

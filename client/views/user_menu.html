@@ -10,7 +10,7 @@
         <img src="{{ currentUser.profile.avatar }}" class="img-circle" alt="User Image" />
         <p>
           {{ currentUser.profile.firstname }} {{ currentUser.profile.name }} - {{ currentUser.profile.job }}
-          <small>Member since {{ currentUser.createdAt }}</small>
+          <small>Member since {{ dateMomentFormat currentUser.profile.created_at }}</small>
         </p>
       </li>
       <!-- Menu Body -->
