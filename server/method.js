@@ -24,6 +24,8 @@ Meteor.methods({
       result = Notifications.insert({
           notification_level: "people_info",
           notification_message: "Profile updated",
+          notification_date: new Date(),
+          notification_read: false,
           notification_to_user_id: this.userId
       });
     }

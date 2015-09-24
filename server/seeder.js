@@ -72,22 +72,32 @@ Meteor.startup(function() {
   // Notifications
   var notifications = [{
     notification_level: "people_info",
-    notification_message: "5 new members joined today"
+    notification_message: "5 new members joined today",
+    notification_date: new Date('2015-07-29T09:45:00'),
+    notification_read: false
   }, {
     notification_level: "danger",
     notification_message: "Very long description here that may not fit into the page and may cause design problems",
+    notification_date: new Date('2015-08-29T09:45:00'),
+    notification_read: false,
     notification_to_user_id: user._id
   }, {
     notification_level: "warning",
     notification_message: "5 new members joined",
+    notification_date: new Date('2015-09-19T09:45:00'),
+    notification_read: false,
     notification_to_user_id: user._id
   }, {
     notification_level: "cart_success",
     notification_message: "25 sales made",
+    notification_date: new Date('2015-09-21T09:45:00'),
+    notification_read: false,
     notification_to_user_id: user._id
   }, {
     notification_level: "person_danger",
     notification_message: "You changed your username",
+    notification_date: new Date('2015-08-25T09:45:00'),
+    notification_read: false,
     notification_to_user_id: user._id
   }, ];
 

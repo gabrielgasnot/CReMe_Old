@@ -11,7 +11,7 @@ Meteor.publish("Notifications", function() {
       {notification_to_user_id: {$exists: false}},
       {notification_to_user_id: null}
     ]
-  });
+  }, {sort: {notification_date: -1}});
 });
 
 Meteor.publish("Tasks", function() {

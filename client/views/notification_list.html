@@ -1,0 +1,40 @@
+<template name="notification_list">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Notifications
+      <small>{{ currentUser.username }}</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="{{pathFor 'home'}}">
+          <i class="fa fa-user"></i>
+          Acceuil
+        </a>
+      </li>
+      <li class="active">Notifications</li>
+    </ol>
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        {{#each notifications}}
+          <div id="{{ _id }}" class="menu">
+            <div class="col-md-2">
+              <a href="#">
+                <i class="{{ classFromNotificationLevel notification_level }}"></i>
+              </a>
+            </div>
+            <div class="col-md-2">
+              {{ dateMomentFormat notification_date }}
+            </div>
+            <div class="col-md-8">
+              {{ notification_message }}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</template>

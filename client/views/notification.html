@@ -1,5 +1,8 @@
 <template name="notification">
-  <a href="#">
-    <i class="{{ classFromNotificationLevel notification_level }}"></i> {{ notification_message }}
+  <a href="#" id="{{ _id }}">
+    <div class="pull-right">
+        <small><i class="fa fa-clock-o"></i> {{ dateAgeFromNow notification_date }}</small>
+    </div>
+      <i class="{{ classFromNotificationLevel notification_level }}"></i> {{ notification_message }}
   </a>
 </template>

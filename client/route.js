@@ -36,3 +36,10 @@ Router.route('/dashboard', {
 		this.render('dashboard_content');
 	}
 });
+
+Router.route('/notification_list', {
+	name: 'notification_list',
+	action: function() {
+		this.render('notification_list');
+	}
+})

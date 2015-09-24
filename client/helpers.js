@@ -3,7 +3,7 @@ Template.registerHelper("dateAgeFromNow", function(date_to_evaluate) {
 });
 
 Template.registerHelper("dateMomentFormat", function(date_to_format){
-  return moment(this.date_to_format).format("DD/MM/YYYY");
+  return moment(date_to_format).format("DD/MM/YYYY");
 });
 
 Template.registerHelper("classFromNotificationLevel", function(level) {
